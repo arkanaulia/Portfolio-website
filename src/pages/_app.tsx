@@ -1,7 +1,6 @@
 import { useRef, useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 import Header from '@/config'
-import Layout from '@/components/dom/Layout'
 import Router from 'next/router'
 import '@/styles/index.css'
 import Loading from '@/components/Loading'
@@ -35,14 +34,7 @@ export default function App({ Component, pageProps = { title: 'index' } }) {
     <>
       {loading ? <Loading /> : <Component {...pageProps} />}
   
-       {/* <Layout ref={ref}>
-        <Component {...pageProps} />
-        {Component?.canvas && (
-          <Scene className='pointer-events-none' eventSource={ref} eventPrefix='client'>
-            {Component.canvas(pageProps)}
-          </Scene>
-        )}
-      </Layout>  */}
+      
     </>
   )
 }
