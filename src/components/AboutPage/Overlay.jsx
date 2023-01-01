@@ -17,7 +17,7 @@ export function Overlay({ scroll }) {
             <strong>Ar·kan </strong>Au·li·a
           </h1>
           <nav className='text-2xl py-3 '>
-            <a className=''>/dəˈzīnər/</a>
+            <a className=''>/də&apos;zīnər/</a>
           </nav>
         </header>
         <div className='flex flex-col items-center md:w-1/3 gap-3'>
@@ -104,7 +104,10 @@ export function Overlay({ scroll }) {
               </Link>
             </div>
             <div className='bg-zinc-900 self-end transition-all transition-duration: 300ms; hover:bg-gray-800 w-full px-5 py-2 rounded-lg bg-opacity-20 backdrop-blur-md text-opacity-100 border-opacity-10 border-solid border-2 border-slate-50'>
-              <Link href={'mailto:arkanaulia@gmail.com'} className='flex flex-row items-center gap-2 w-full' target={'_blank'}>
+              <Link
+                href={'mailto:arkanaulia@gmail.com'}
+                className='flex flex-row items-center gap-2 w-full'
+                target={'_blank'}>
                 <p className='text-base w-full'>Get some coffee with me </p>
                 <BsArrowUpRight className='text-sm' />
               </Link>
@@ -117,8 +120,9 @@ export function Overlay({ scroll }) {
           <p className=''>Did you already see my work? Come see it!</p>
 
           <div className='bg-zinc-900 items-center transition-all transition-duration: 300ms; hover:bg-gray-800 gap-2 justify-center flex px-5 py-2 w-full rounded-lg bg-opacity-20 backdrop-blur-md text-opacity-100 border-opacity-10 border-solid border-2 border-slate-50'>
-            <Link className='w-full' href={"/work"}>
-            <p className='text-base w-full'>Go to my work</p></Link>
+            <Link className='w-full' href={'/work'}>
+              <p className='text-base w-full'>Go to my work</p>
+            </Link>
             <BsArrowUpRight className='text-sm' />
           </div>
         </div>
