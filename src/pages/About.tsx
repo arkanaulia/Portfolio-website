@@ -1,8 +1,7 @@
 import App from '../components/AboutPage/App'
 import Idlelogo from 'https://framer.com/m/idlelogo-TKFx.js@kofpiXmnXsVOMD84aYmV'
 import Link from 'next/link'
-import { Suspense } from 'react'
-import Loading from '@/components/Loading'
+
 import Head from 'next/head'
 
 export default function About() {
@@ -19,9 +18,7 @@ export default function About() {
           <Idlelogo />
         </Link>
       </div>
-      <Suspense fallback={<Loading />}>
         <App />
-      </Suspense>
     </>
   )
 }

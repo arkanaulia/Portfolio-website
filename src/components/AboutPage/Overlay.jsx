@@ -2,6 +2,8 @@ import styles from './Overlay.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 import { BsArrowUpRight } from 'react-icons/bs'
+import Lottie from 'lottie-react'
+import Scroll from '../../../public/animation/scroll.json'
 
 export function Overlay({ scroll }) {
   return (
@@ -25,37 +27,7 @@ export function Overlay({ scroll }) {
             A designer focused on fusing eye-pleasing and problem-solving for an improved user experience.
           </p>
           <p className='mt-14'>Scroll down to know more!</p>
-          <p>
-            <svg width='30' height='71' viewBox='0 0 30 71' fill='none' xmlns='http://www.w3.org/2000/svg'>
-              <rect
-                x='1.5'
-                y='1.5'
-                width='27'
-                height='45'
-                rx='13.5'
-                stroke='#fff'
-                stroke-opacity='0.6'
-                stroke-width='3'
-              />
-              <path d='M15 12V20' stroke='#fff' stroke-opacity='0.6' stroke-width='3' stroke-linecap='round' />
-              <path
-                d='M8 54L14.5 60.5L21 54'
-                stroke='#fff'
-                stroke-opacity='0.6'
-                stroke-width='3'
-                stroke-linecap='round'
-                stroke-linejoin='round'
-              />
-              <path
-                d='M8 63L14.5 69.5L21 63'
-                stroke='#fff'
-                stroke-opacity='0.6'
-                stroke-width='3'
-                stroke-linecap='round'
-                stroke-linejoin='round'
-              />
-            </svg>
-          </p>
+          <Lottie className='w-20' animationData={Scroll} />
         </div>
       </section>
       <section className='md:text-2xl text-justify md:px-40 w-max'>
