@@ -1,0 +1,136 @@
+import React, { useEffect } from "react";
+import { addPropertyControls, ControlType, RenderTarget } from "framer";
+import Rive, { useRive, useStateMachineInput } from "@rive-app/react-canvas";
+export const componentName = "New Artboard - State Machine 1";
+export default function Controls(props) {
+  const layout = new Rive.Layout({
+    fit: props.fit ?? "contain",
+    alignment: props.alignment ?? "center",
+  });
+  const params = {
+    src: "https://public.rive.app/hosted/210246/25122/0kDTgCdh-USqP11JXbJb7g.riv",
+    artboard: "New Artboard",
+    stateMachines: "State Machine 1",
+    autoplay: true && props.play,
+    layout,
+  };
+  const { RiveComponent, rive } = useRive(params);
+  const boolean1 = useStateMachineInput(
+    rive,
+    "State Machine 1",
+    "hover",
+    props.boolean1
+  );
+  useEffect(() => {
+    if (boolean1) {
+      boolean1.value = props.boolean1;
+    }
+  }, [props.boolean1]);
+  useEffect(() => {
+    if (rive) {
+      if (RenderTarget.current() === RenderTarget.canvas) {
+        if (props.playOnCanvas && props.play) {
+          rive.play();
+        } else {
+          rive.pause();
+        }
+      } else {
+        if (props.play) {
+          rive.play();
+        } else {
+          rive.pause();
+        }
+      }
+    }
+  }, [props.play]);
+  useEffect(() => {
+    if (rive && RenderTarget.current() === RenderTarget.canvas) {
+      if (props.playOnCanvas && props.play) {
+        rive.play();
+      } else {
+        rive.pause();
+      }
+    }
+  }, [rive, props.playOnCanvas, props.play]);
+  useEffect(() => {
+    if (rive) {
+      const layout = new Rive.Layout({
+        fit: props.fit ?? "contain",
+        alignment: props.alignment ?? "center",
+      });
+      rive.layout = layout;
+    }
+  }, [props.fit, props.alignment]);
+  return React.createElement(RiveComponent, {});
+}
+Controls.defaultProps = { play: true, playOnCanvas: true, boolean1: true };
+export const propertyControls = {
+  play: {
+    title: "Playback",
+    type: ControlType.Boolean,
+    defaultValue: true,
+    enabledTitle: "Play",
+    disabledTitle: "Pause",
+  },
+  playOnCanvas: {
+    type: ControlType.Boolean,
+    title: "Play on Canvas",
+    defaultValue: true,
+    enabledTitle: "Play",
+    disabledTitle: "Pause",
+  },
+  boolean1: { title: "hover", type: ControlType.Boolean, defaultValue: true },
+  fit: {
+    type: ControlType.Enum,
+    defaultValue: "contain",
+    displaySegmentedControl: false,
+    segmentedControlDirection: "vertical",
+    options: [
+      "contain",
+      "cover",
+      "fill",
+      "fitWidth",
+      "fitHeight",
+      "none",
+      "scaleDown",
+    ],
+    optionTitles: [
+      "Contain",
+      "Cover",
+      "Fill",
+      "Fit Width",
+      "Fit Height",
+      "None",
+      "Scale Down",
+    ],
+  },
+  alignment: {
+    type: ControlType.Enum,
+    defaultValue: "center",
+    displaySegmentedControl: false,
+    segmentedControlDirection: "vertical",
+    options: [
+      "center",
+      "topLeft",
+      "topCenter",
+      "topRight",
+      "centerLeft",
+      "centerRight",
+      "bottomLeft",
+      "bottomCenter",
+      "bottomRight",
+    ],
+    optionTitles: [
+      "Center",
+      "Top Left",
+      "Top Center",
+      "Top Right",
+      "Center Left",
+      "Center Right",
+      "Bottom Left",
+      "Bottom Center",
+      "Bottom Right",
+    ],
+  },
+};
+addPropertyControls(Controls, propertyControls);
