@@ -61,7 +61,7 @@ export function Overlay({ scroll }) {
       <section className='md:text-2xl text-justify md:px-40 w-max'>
         <div className='w-full bg-zinc-900 p-10 rounded-xl bg-opacity-20 backdrop-blur-md text-opacity-100 border-opacity-10 border-solid border-2 border-slate-50'>
           <p className=''>
-            Hi i'm Arkan, i'm a multidiciplinary designer <sub>(i guess)</sub> from Indonesia.
+            Hi i&apos;m Arkan, i&apos;m a multidiciplinary designer <sub>(i guess)</sub> from Indonesia.
             <br />I am in the third year of my informatics degree program. <br />{' '}
             <sub>(yes i supposedly can programming)</sub>
           </p>
