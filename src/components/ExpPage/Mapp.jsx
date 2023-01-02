@@ -16,6 +16,7 @@ function Item({ index, position, scale, c = new THREE.Color(), ...props }) {
   const out = () => hover(false)
   useFrame((state, delta) => {
     const y = scroll.curve(index / urls.length - 1.5 / urls.length, 4 / urls.length)
+
     ref.current.material.scale[1] = ref.current.scale.y = damp(
       ref.current.scale.y,
       clicked === index ? 5 : 4 + y,
@@ -55,7 +56,7 @@ function Item({ index, position, scale, c = new THREE.Color(), ...props }) {
   )
 }
 
-function Items({ w = 0.7, gap = 0.15 }) {
+export default function Items({ w = 0.7, gap = 0.15 }) {
   const { urls } = useSnapshot(state)
   const { width } = useThree((state) => state.viewport)
   const xW = w + gap
@@ -70,9 +71,3 @@ function Items({ w = 0.7, gap = 0.15 }) {
     </ScrollControls>
   )
 }
-
-export const Mapp = () => (
-  // <Canvas gl={{ antialias: false }} dpr={[1, 1.5]} onPointerMissed={() => (state.clicked = null)}>
-    <Items />
-  // </Canvas>
-)

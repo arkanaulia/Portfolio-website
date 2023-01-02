@@ -22,7 +22,7 @@ export default function experience() {
           <p className=''>Hi! get to know me more!</p>
 
           <div className='bg-zinc-900 items-center transition-all transition-duration: 300ms; hover:bg-gray-800  justify-center flex px-2 py-1 md:px-5 md:py-2 w-full rounded-lg bg-opacity-20 backdrop-blur-md text-opacity-100 border-opacity-10 border-solid border-2 border-slate-50'>
-            <Link className='w-full' href={'/work'}>
+            <Link className='w-full' href={'/About'}>
               <p className='text-sm md:text-base w-full'>Go to my bio</p>
             </Link>
             <BsArrowUpRight className='text-sm' />
