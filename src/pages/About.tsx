@@ -1,6 +1,8 @@
 import App from '../components/AboutPage/App'
 import Idlelogo from 'https://framer.com/m/idlelogo-TKFx.js@kofpiXmnXsVOMD84aYmV'
 import Link from 'next/link'
+import { Suspense } from 'react'
+import Loading from '@/components/Loading'
 
 import Head from 'next/head'
 
@@ -13,12 +15,8 @@ export default function About() {
         <link rel='icon' href='/icons/favicon.ico' />
       </Head>
 
-      <div className='left-0 p-10 fixed z-30'>
-        <Link href='/'>
-          <Idlelogo />
-        </Link>
-      </div>
         <App />
+   
     </>
   )
 }

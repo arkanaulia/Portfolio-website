@@ -4,6 +4,7 @@
 import * as THREE from 'three'
 import { useRef } from 'react'
 import useSpline from '@splinetool/r3f-spline'
+// const useSpline = React.lazy(() => import('@splinetool/react-spline'))
 import { Clone, Float, PerspectiveCamera, Stars } from '@react-three/drei'
 import { useFrame, useThree } from '@react-three/fiber'
 import { useLerpedMouse } from './hooks'

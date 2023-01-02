@@ -1,4 +1,4 @@
-import styles from './Overlay.module.css'
+// import styles from './Overlay.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 import { BsArrowUpRight } from 'react-icons/bs'
@@ -8,7 +8,7 @@ import Scroll from '../../../public/animation/scroll.json'
 export function Overlay({ scroll }) {
   return (
     <div
-      className='h-full w-full absolute top-0 left-0 z-10 overflow-y-auto will-change-transform px-20 flex flex-col gap-80 text-white'
+      className='h-full w-full absolute top-0 left-0 overflow-y-auto will-change-transform px-20 flex flex-col gap-80 text-white'
       onScroll={(e) => {
         const scroll01 = e.target.scrollTop / (e.target.scrollHeight - window.innerHeight)
         scroll.current = scroll01

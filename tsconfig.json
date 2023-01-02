@@ -29,7 +29,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/components/canvas/Gallery.jsx", "src/helper/frame.jsx", "src/components/shared/GrassProps.jsx", "src/components/shared/GrassProps.jsx", "src/components/shared/GrassProps.jsx", "src/pages/navigation.tsx", "src/components/Loading.tsx"  ],
+, "src/components/canvas/Gallery.jsx", "src/helper/frame.jsx", "src/components/shared/GrassProps.jsx", "src/components/shared/GrassProps.jsx", "src/components/shared/GrassProps.jsx", "src/pages/navigation.tsx", "src/components/Loading.tsx", "src/components/ExpPage/Text.js"  ],
   "exclude": [
     "node_modules"
   ]
