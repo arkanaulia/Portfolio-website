@@ -1,12 +1,13 @@
 import * as THREE from 'three'
 import { useRef, useState } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
-import { Image, ScrollControls, Scroll, useScroll } from '@react-three/drei'
+import { Image, ScrollControls, Scroll, useScroll, Text } from '@react-three/drei'
 import { useSnapshot } from 'valtio'
 import { Minimap } from './Minimap'
 import { state, damp } from './util'
+import boldUrl from './assets/fonts/OpenSans-Bold.ttf'
 
-function Item({ index, position, scale, c = new THREE.Color(), ...props }) {
+function Item({ index, position, scale, text, width, c = new THREE.Color(), ...props }) {
   const ref = useRef()
   const scroll = useScroll()
   const { clicked, urls } = useSnapshot(state)
@@ -44,15 +45,29 @@ function Item({ index, position, scale, c = new THREE.Color(), ...props }) {
     ref.current.material.color.lerp(c.set(hovered || clicked === index ? 'white' : '#aaa'), hovered ? 0.3 : 0.1)
   })
   return (
-    <Image
-      ref={ref}
-      {...props}
-      position={position}
-      scale={scale}
-      onClick={click}
-      onPointerOver={over}
-      onPointerOut={out}
-    />
+    <>
+      <Text
+        anchorX='center'
+        anchorY='top'
+        position={[position[0], position[1]-0.4, position[2]]}
+        fontSize={0.15}
+        color='#252525'
+        font={boldUrl}
+        maxWidth={3.7}
+        textAlign={'justify'}
+        strokeWidth={0}>
+        {state.clicked === index ? text : ''}
+      </Text>
+      <Image
+        ref={ref}
+        {...props}
+        position={position}
+        scale={scale}
+        onClick={click}
+        onPointerOver={over}
+        onPointerOut={out}
+      />
+    </>
   )
 }
 
@@ -64,9 +79,17 @@ export default function Items({ w = 0.7, gap = 0.15 }) {
     <ScrollControls horizontal damping={10} pages={(width - xW + urls.length * xW) / width}>
       <Minimap />
       <Scroll>
-        {
-          urls.map((url, i) => <Item key={i} index={i} position={[i * xW, 0, 0]} scale={[w, 4, 1]} url={url} />) /* prettier-ignore */
-        }
+        {urls.map((url, i) => (
+          <Item
+            key={i}
+            index={i}
+            width={w}
+            text={url.text}
+            position={[i * xW, 0, 0]}
+            scale={[w, 4, 1]}
+            url={`${url.img}.jpg`}
+          />
+        ))}
       </Scroll>
     </ScrollControls>
   )

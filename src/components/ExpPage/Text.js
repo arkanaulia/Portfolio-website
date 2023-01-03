@@ -21,7 +21,7 @@ export default function Text({
       curveSegments: 32,
       bevelEnabled: true,
       bevelThickness: 6,
-      bevelSize: 2,
+      bevelSize: 1,
       bevelOffset: 0,
       bevelSegments: 8,
     }),
@@ -44,7 +44,7 @@ export default function Text({
   const ref = useRef()
 
   return (
-    <group {...props} scale={[0.1 * size, 0.1 * size, 0.1]}>
+    <group {...props} scale={[0.1 * size, 0.1 * size, 0.1]} rotation={[0,1,0]}>
       <Text3D ref={mesh} font={boldUrl} {...config}>
         {children}
         <MeshRefractionMaterial

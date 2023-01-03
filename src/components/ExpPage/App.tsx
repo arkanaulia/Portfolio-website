@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import React, { Suspense, useEffect, useRef, useState } from 'react'
 import { Canvas, useLoader, useFrame } from '@react-three/fiber'
-import { Sky, Environment } from '@react-three/drei'
+import { Sky, Environment, Cloud } from '@react-three/drei'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import Items from './Mapp'
 import Scene from '../canvas/Scene'
@@ -16,16 +16,19 @@ function Jumbo() {
   useFrame(
     ({ clock }) =>
       ref.current &&
-      (ref.current.rotation.x =
-        ref.current.rotation.y =
-        ref.current.rotation.z =
-          Math.sin(clock.getElapsedTime()) * 0.3),
+      (
+        ref.current.position.y =
+ 
+          Math.sin(clock.getElapsedTime()) * 0.9),
   )
   return (
     <>
       <group ref={ref}>
-        <Text hAlign='right' position={[-14, 0, -10]}>
-          EXPERIENCE
+        <Text hAlign='right' position={[-18, 0, -10]}>
+          EXPER
+        </Text>
+        <Text hAlign='right' position={[-18, -3, -10]}>
+          IENCE
         </Text>
         {/* <Text hAlign='right' position={[-12, 0, 0]} children='TRES' />
       <Text hAlign='right' position={[-12, -6.5, 0]} children='TROIS' /> */}
@@ -100,10 +103,11 @@ export default function App() {
         <ambientLight intensity={2} />
         <pointLight position={[40, 40, 40]} />
         <Suspense fallback={null}>
-          {new Array(100).fill(1).map((_, idx) => (
+          {new Array(50).fill(1).map((_, idx) => (
             <Birds key={idx} idx={idx} />
           ))}
           <Jumbo />
+          <Cloud />
           <Items />
           <Sky />
           <Environment preset='night' />
