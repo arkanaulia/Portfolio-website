@@ -110,7 +110,7 @@ export default function App() {
           <Cloud />
           <Items />
           <Sky />
-          <Environment preset='night' />
+          <Environment preset='city' />
         </Suspense>
       </Scene>
       {/* <OverlayExp /> */}

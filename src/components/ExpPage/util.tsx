@@ -18,19 +18,31 @@ const kontol = [
   },
   {
     img: 4,
-    text: 'As a production manager for Indonesia Peerleader by Paragon, I was part of the founding team responsible for deciding on the visual concept and creating a standard graphic manual. I was also responsible for managing the creation of motion, video, and website content with my team at Indonesia Peerleaders by Paragon.',
-  },
-  {
-    img: 5,
-    text: 'As Production Manager at the International Youth Summit for Renewable Energy (IYSRE) 2021, I was responsible for overseeing the creation of motion and dynamic branding materials, and for ensuring that my team was well-organized and comfortable.',
+    text: 'As a 3D designer for XD Kreativ, I am tasked with creating a portfolio of 3D advertising and content to increase the companys revenue. By gaining insight and utilizing my skills in 3D design, I aim to help XD Kreativ achieve greater success. I am part of the XD Collective, a team dedicated to delivering high-quality 3D design work for our clients.',
   },
   {
     img: 6,
+    text: 'As the Production Manager for the International Youth Summit for Renewable Energy (IYSRE) 2021, I am in charge of managing all motion and dynamic branding elements. Additionally, it is my responsibility to ensure that my team is well-organized and comfortable in their roles.',
+  },
+  {
+    img: 5,
     text: 'As a production manager for Indonesia Peerleader by Paragon, I was part of the founding team responsible for deciding on the visual concept and creating a standard graphic manual. I was also responsible for managing the creation of motion, video, and website content with my team at Indonesia Peerleaders by Paragon.',
   },
   {
     img: 7,
-    text: 'As a production manager for Indonesia Peerleader by Paragon, I was part of the founding team responsible for deciding on the visual concept and creating a standard graphic manual. I was also responsible for managing the creation of motion, video, and website content with my team at Indonesia Peerleaders by Paragon.',
+    text: 'As the Media Production Coordinator for Petrolida, I am responsible for overseeing the media team, including quality control and workload management. I also ensure that all team members are continuously learning new skills and applying them in their work.',
+  },
+  {
+    img: 8,
+    text: 'As the head of the web design team, I am responsible for overseeing the creation of a website from the beginning stages to its completion. It is my job to manage the team and ensure that we are working efficiently and effectively, despite having limited resources and a tight deadline. One of my main duties is to keep the team organized and ensure that everyone is comfortable and able to work effectively.',
+  },
+  {
+    img: 9,
+    text: 'As the Design, Documentation, and Decoration Coordinator for Schematics ITS, my responsibilities include coordinating the work of these departments and making sure that the design of our content is consistent and meets our standards.',
+  },
+  {
+    img: 10,
+    text: 'As a Motion Designer for ITS EXPO, I am introducing 3D animation and am responsible for creating both 2D and 3D motion graphics.',
   },
 ]
 
