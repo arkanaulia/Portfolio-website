@@ -107,10 +107,10 @@ export default function App() {
             <Birds key={idx} idx={idx} />
           ))}
           <Jumbo />
-          <Cloud />
+          <Cloud opacity={0.3} />
           <Items />
           <Sky />
-          <Environment preset='city' />
+          <Environment preset='night' />
         </Suspense>
       </Scene>
       {/* <OverlayExp /> */}
