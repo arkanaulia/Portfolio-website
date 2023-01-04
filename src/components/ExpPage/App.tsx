@@ -107,7 +107,7 @@ export default function App() {
             <Birds key={idx} idx={idx} />
           ))}
           <Jumbo />
-          <Cloud opacity={0.3} />
+          <Cloud opacity={0.5} />
           <Items />
           <Sky />
           <Environment preset='night' />
